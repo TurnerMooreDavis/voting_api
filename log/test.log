@@ -59,3 +59,439 @@ CandidateTest: test_candidate_has_votes
   [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "candidates" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-05-26 17:36:12.067311"], ["updated_at", "2015-05-26 17:36:12.067311"]]
   [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
   [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "candidates"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:41:13', '2015-05-26 17:41:13', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:41:13', '2015-05-26 17:41:13', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "voters"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:41:13', '2015-05-26 17:41:13', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:41:13', '2015-05-26 17:41:13', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "votes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:41:13', '2015-05-26 17:41:13', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:41:13', '2015-05-26 17:41:13', 298486374)[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+CandidateTest: test_candidate_requires_parameters
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+CandidateTest: test_candidate_has_votes
+---------------------------------------
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM "candidates"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:43:57', '2015-05-26 17:43:57', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:43:57', '2015-05-26 17:43:57', 298486374)[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "voters"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:43:57', '2015-05-26 17:43:57', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:43:57', '2015-05-26 17:43:57', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "votes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:43:57', '2015-05-26 17:43:57', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:43:57', '2015-05-26 17:43:57', 298486374)[0m
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+CandidateTest: test_candidate_requires_parameters
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+CandidateTest: test_candidate_has_votes
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:43:57.106148"], ["updated_at", "2015-05-26 17:43:57.106148"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 1], ["created_at", "2015-05-26 17:43:57.112709"], ["updated_at", "2015-05-26 17:43:57.112709"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?  [["candidate_id", 980190963]]
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.8ms)[0m  [1mDELETE FROM "candidates"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:46:41', '2015-05-26 17:46:41', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:46:41', '2015-05-26 17:46:41', 298486374)[0m
+  [1m[35mFixture Delete (0.6ms)[0m  DELETE FROM "voters"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:46:41', '2015-05-26 17:46:41', 980190962)[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:46:41', '2015-05-26 17:46:41', 298486374)
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "votes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:46:41', '2015-05-26 17:46:41', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:46:41', '2015-05-26 17:46:41', 298486374)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+CandidateTest: test_candidate_has_votes
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:46:41.927971"], ["updated_at", "2015-05-26 17:46:41.927971"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 1], ["created_at", "2015-05-26 17:46:41.935999"], ["updated_at", "2015-05-26 17:46:41.935999"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?  [["candidate_id", 980190963]]
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+-------------------------------------------------
+CandidateTest: test_candidate_requires_parameters
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------
+VoteTest: test_vote_requires_parameters
+---------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "votes" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-05-26 17:46:41.974841"], ["updated_at", "2015-05-26 17:46:41.974841"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+VoteTest: test_vote_belongs_to_candidate_and_voter
+--------------------------------------------------
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:46:41.978522"], ["updated_at", "2015-05-26 17:46:41.978522"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "voters" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "joe"], ["created_at", "2015-05-26 17:46:41.983567"], ["updated_at", "2015-05-26 17:46:41.983567"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["candidate_id", 980190963], ["voter_id", 980190963], ["created_at", "2015-05-26 17:46:41.985929"], ["updated_at", "2015-05-26 17:46:41.985929"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.7ms)[0m  [1mDELETE FROM "candidates"[0m
+  [1m[35mFixture Insert (0.5ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:50:44', '2015-05-26 17:50:44', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:50:44', '2015-05-26 17:50:44', 298486374)[0m
+  [1m[35mFixture Delete (0.5ms)[0m  DELETE FROM "voters"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:50:44', '2015-05-26 17:50:44', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:50:44', '2015-05-26 17:50:44', 298486374)
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "votes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:50:44', '2015-05-26 17:50:44', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:50:44', '2015-05-26 17:50:44', 298486374)[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+VoteTest: test_vote_requires_parameters
+---------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "votes" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-05-26 17:50:44.469528"], ["updated_at", "2015-05-26 17:50:44.469528"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+VoteTest: test_vote_belongs_to_candidate_and_voter
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:50:44.477489"], ["updated_at", "2015-05-26 17:50:44.477489"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "voters" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "joe"], ["created_at", "2015-05-26 17:50:44.482392"], ["updated_at", "2015-05-26 17:50:44.482392"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 980190963], ["created_at", "2015-05-26 17:50:44.484528"], ["updated_at", "2015-05-26 17:50:44.484528"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+CandidateTest: test_candidate_has_votes
+---------------------------------------
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:50:44.488577"], ["updated_at", "2015-05-26 17:50:44.488577"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 1], ["created_at", "2015-05-26 17:50:44.491037"], ["updated_at", "2015-05-26 17:50:44.491037"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?  [["candidate_id", 980190963]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------
+CandidateTest: test_candidate_requires_parameters
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "candidates"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:56:10', '2015-05-26 17:56:10', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:56:10', '2015-05-26 17:56:10', 298486374)[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "voters"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:56:10', '2015-05-26 17:56:10', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:56:10', '2015-05-26 17:56:10', 298486374)
+  [1m[36mFixture Delete (0.2ms)[0m  [1mDELETE FROM "votes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:56:10', '2015-05-26 17:56:10', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:56:10', '2015-05-26 17:56:10', 298486374)[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+VoteTest: test_vote_requires_parameters
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "votes" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-05-26 17:56:10.286637"], ["updated_at", "2015-05-26 17:56:10.286637"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------
+CandidateTest: test_candidate_has_votes
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:56:10.300156"], ["updated_at", "2015-05-26 17:56:10.300156"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["candidate_id", 980190963], ["voter_id", 1], ["created_at", "2015-05-26 17:56:10.302422"], ["updated_at", "2015-05-26 17:56:10.302422"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?[0m  [["candidate_id", 980190963]]
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+CandidateTest: test_candidate_requires_parameters
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "candidates"[0m
+  [1m[35mFixture Insert (0.3ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:56:38', '2015-05-26 17:56:38', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:56:38', '2015-05-26 17:56:38', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "voters"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:56:38', '2015-05-26 17:56:38', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:56:38', '2015-05-26 17:56:38', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "votes"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:56:38', '2015-05-26 17:56:38', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:56:38', '2015-05-26 17:56:38', 298486374)[0m
+  [1m[35m (8.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------------------------
+CandidateTest: test_candidate_requires_parameters
+-------------------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+CandidateTest: test_candidate_has_votes
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:56:38.069895"], ["updated_at", "2015-05-26 17:56:38.069895"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 1], ["created_at", "2015-05-26 17:56:38.074967"], ["updated_at", "2015-05-26 17:56:38.074967"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?  [["candidate_id", 980190963]]
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+VoteTest: test_vote_belongs_to_candidate_and_voter
+--------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:56:38.098669"], ["updated_at", "2015-05-26 17:56:38.098669"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "voters" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "joe"], ["created_at", "2015-05-26 17:56:38.104703"], ["updated_at", "2015-05-26 17:56:38.104703"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 980190963], ["created_at", "2015-05-26 17:56:38.108896"], ["updated_at", "2015-05-26 17:56:38.108896"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+VoteTest: test_vote_requires_parameters
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "votes" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2015-05-26 17:56:38.113907"], ["updated_at", "2015-05-26 17:56:38.113907"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.3ms)[0m  [1mDELETE FROM "candidates"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:57:22', '2015-05-26 17:57:22', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:57:22', '2015-05-26 17:57:22', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "voters"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:57:22', '2015-05-26 17:57:22', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:57:22', '2015-05-26 17:57:22', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "votes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:57:22', '2015-05-26 17:57:22', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:57:22', '2015-05-26 17:57:22', 298486374)[0m
+  [1m[35m (8.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+--------------------------------------------------
+VoteTest: test_vote_belongs_to_candidate_and_voter
+--------------------------------------------------
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:57:22.456290"], ["updated_at", "2015-05-26 17:57:22.456290"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "voters" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "joe"], ["created_at", "2015-05-26 17:57:22.464205"], ["updated_at", "2015-05-26 17:57:22.464205"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["candidate_id", 980190963], ["voter_id", 980190963], ["created_at", "2015-05-26 17:57:22.473372"], ["updated_at", "2015-05-26 17:57:22.473372"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ?[0m  [["voter_id", 980190963]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?  [["candidate_id", 980190963]]
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------
+VoteTest: test_vote_requires_parameters
+---------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "votes" ("created_at", "updated_at") VALUES (?, ?)  [["created_at", "2015-05-26 17:57:22.494331"], ["updated_at", "2015-05-26 17:57:22.494331"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+CandidateTest: test_candidate_has_votes
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:57:22.498928"], ["updated_at", "2015-05-26 17:57:22.498928"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 1], ["created_at", "2015-05-26 17:57:22.501722"], ["updated_at", "2015-05-26 17:57:22.501722"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?  [["candidate_id", 980190963]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------
+CandidateTest: test_candidate_requires_parameters
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "candidates"[0m
+  [1m[35mFixture Insert (0.4ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:58:40', '2015-05-26 17:58:40', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 17:58:40', '2015-05-26 17:58:40', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "voters"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:58:40', '2015-05-26 17:58:40', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 17:58:40', '2015-05-26 17:58:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "votes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:58:40', '2015-05-26 17:58:40', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 17:58:40', '2015-05-26 17:58:40', 298486374)[0m
+  [1m[35m (9.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+CandidateTest: test_candidate_has_votes
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:58:41.016233"], ["updated_at", "2015-05-26 17:58:41.016233"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 1], ["created_at", "2015-05-26 17:58:41.021573"], ["updated_at", "2015-05-26 17:58:41.021573"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?  [["candidate_id", 980190963]]
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------
+CandidateTest: test_candidate_requires_parameters
+-------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+---------------------------------------
+VoteTest: test_vote_requires_parameters
+---------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+--------------------------------------------------
+VoteTest: test_vote_belongs_to_candidate_and_voter
+--------------------------------------------------
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 17:58:41.062932"], ["updated_at", "2015-05-26 17:58:41.062932"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "voters" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "joe"], ["created_at", "2015-05-26 17:58:41.070203"], ["updated_at", "2015-05-26 17:58:41.070203"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 980190963], ["created_at", "2015-05-26 17:58:41.072712"], ["updated_at", "2015-05-26 17:58:41.072712"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ?  [["voter_id", 980190963]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?[0m  [["candidate_id", 980190963]]
+  [1m[35m (0.9ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mFixture Delete (0.4ms)[0m  [1mDELETE FROM "candidates"[0m
+  [1m[35mFixture Insert (0.2ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 18:00:00', '2015-05-26 18:00:00', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 'MyString', '2015-05-26 18:00:00', '2015-05-26 18:00:00', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "voters"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 18:00:00', '2015-05-26 18:00:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "voters" ("name", "party", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2015-05-26 18:00:00', '2015-05-26 18:00:00', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "votes"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 18:00:00', '2015-05-26 18:00:00', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "votes" ("voter_id", "candidate_id", "created_at", "updated_at", "id") VALUES (1, 1, '2015-05-26 18:00:00', '2015-05-26 18:00:00', 298486374)[0m
+  [1m[35m (0.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+CandidateTest: test_candidate_has_votes
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 18:00:00.354257"], ["updated_at", "2015-05-26 18:00:00.354257"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 1], ["created_at", "2015-05-26 18:00:00.361404"], ["updated_at", "2015-05-26 18:00:00.361404"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?  [["candidate_id", 980190963]]
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-------------------------------------------------
+CandidateTest: test_candidate_requires_parameters
+-------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+--------------------------------------------------
+VoteTest: test_vote_belongs_to_candidate_and_voter
+--------------------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "candidates" ("name", "hometown", "district", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["name", "bob"], ["hometown", "bobsville"], ["district", 2], ["created_at", "2015-05-26 18:00:00.388626"], ["updated_at", "2015-05-26 18:00:00.388626"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "voters" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "joe"], ["created_at", "2015-05-26 18:00:00.392975"], ["updated_at", "2015-05-26 18:00:00.392975"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 980190963], ["voter_id", 980190963], ["created_at", "2015-05-26 18:00:00.394703"], ["updated_at", "2015-05-26 18:00:00.394703"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ?  [["voter_id", 980190963]]
+  [1m[36m (0.0ms)[0m  [1mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidate_id" = ?[0m  [["candidate_id", 980190963]]
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+---------------------------------------
+VoteTest: test_vote_requires_parameters
+---------------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+-------------------------------
+VoterTest: test_voter_has_votes
+-------------------------------
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "voters" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "joe"], ["created_at", "2015-05-26 18:00:00.404140"], ["updated_at", "2015-05-26 18:00:00.404140"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "votes" ("candidate_id", "voter_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["candidate_id", 1], ["voter_id", 980190963], ["created_at", "2015-05-26 18:00:00.406617"], ["updated_at", "2015-05-26 18:00:00.406617"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "votes" WHERE "votes"."voter_id" = ?  [["voter_id", 980190963]]
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+-----------------------------------------
+VoterTest: test_voter_requires_parameters
+-----------------------------------------
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
