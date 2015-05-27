@@ -1,4 +1,5 @@
 require 'test_helper'
+require "byebug"
 
 class VoteTest < ActiveSupport::TestCase
 
@@ -14,5 +15,5 @@ class VoteTest < ActiveSupport::TestCase
     assert_equal 1, joe.votes.count
     assert_equal 1, bob.votes.count
   end
-  
+
 end
